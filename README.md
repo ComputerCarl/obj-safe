@@ -1,14 +1,22 @@
-# Returns the value of a nested object or undefined
+# Returns the value of a nested object, an included parameter, or undefined
+
+This is not necessary when using ECMAScript 2020 or later or TypeScript 3.7 or later which support [optional chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining). 
+
+`duckling?.name?.maiden`
 
 
 ```js
-const getSafe = require('./index'); // or
-// import getSafe from ('getsafe);
+const objSafe = require('objSafe');
 
-const duckling = { };
+const duckling = {
+    name: {
+        current: 'Quackers'
+    }
+ };
 
-getSafe (duckling.name.maiden); // -> undefined
-getSafe (duckling.feathers.color, 'white'); // -> 'white'
+objSafe (duckling.name.maiden); // -> undefined
+objSafe (() => duckling.feathers.color, 'white'); // -> 'white'
+objSafe (duckling.name.current, 'Arnold'); // -> 'Quackers'
 ```
 
 

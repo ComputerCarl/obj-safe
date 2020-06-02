@@ -4,8 +4,11 @@
   "description": "allows getting value from nested object",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest test"
   },
   "author": "Computer Carl",
-  "license": "ISC"
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^26.0.1"
+  }
 }
